@@ -1,11 +1,16 @@
-## My Project
+## Direct Service Integrations
 
-TODO: Fill this README out!
+This repo is associated with the AWS Blog post: [Optimizing architecture using direct service integrations]().
 
-Be sure to:
+It is divided in two parts:
 
-* Change the title in this README
-* Edit your repository description on GitHub
+ * [Initial architecture](./lambda-integration/), that makes heavy use of AWS Lambda functions to perform all operations.
+ * [Improved architecture](./direct-integration/), that get ride of most of them and favor direct integrations when that make sense.
+
+As general recommendations:
+
+ * Don't use Lambda functions to transport data (from one service to another), use them to **transform** data.
+ * Don't use Lambda functions to just make AWS API call, use Step Functions Direct Integration to do that and use Lambda to **implement business logic** when Step Functions is not enough.
 
 ## Security
 

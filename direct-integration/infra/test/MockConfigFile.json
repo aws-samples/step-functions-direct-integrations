@@ -1,0 +1,95 @@
+{
+    "StateMachines": {
+        "DirectIntegrationTest": {
+            "TestCases":{
+                "HappyPath": {
+                    "Extract info from ID": "ExtractFromIDSuccess",
+                    "Validate Address": "ValidateAddressSuccess",
+                    "Get User if exists": "UserDoesNotExist",
+                    "Create User": "CreateUserSuccess",
+                    "Notify Backends": "NotifyBackendsSuccess"
+                }
+            }
+        }
+    },
+    "MockedResponses": {
+        "ExtractFromIDSuccess": {
+            "0": {
+                "Return": {
+                    "Payload": {
+                        "firstnames": ["John", "Bob"],
+                        "lastname": "McDeLuxe",
+                        "birthdate": "1984-05-17"
+                    },
+                    "StatusCode": 200
+                }
+            }
+        },
+        "ValidateAddressSuccess": {
+            "0": {
+                "Return": {
+                    "ResponseBody": {
+                        "type": "FeatureCollection",
+                        "version": "draft",
+                        "features": [
+                            {
+                                "type": "Feature",
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        2.306899,
+                                        48.870371
+                                    ]
+                                },
+                                "properties": {
+                                    "label": "50 Avenue des Champs Elysées 75008 Paris",
+                                    "score": 0.97323,
+                                    "housenumber": "50",
+                                    "id": "75108_1733_00050",
+                                    "name": "50 Avenue des Champs Elysées",
+                                    "postcode": "75008",
+                                    "citycode": "75108",
+                                    "x": 649158.68,
+                                    "y": 6863594.7,
+                                    "city": "Paris",
+                                    "district": "Paris 8e Arrondissement",
+                                    "context": "75, Paris, Île-de-France",
+                                    "street": "Avenue des Champs Elysées"
+                                }
+                            }
+                        ],
+                        "query": "50 avenue des Champs Élysées",
+                        "filters": {
+                            "postcode": "75008"
+                        },
+                        "limit": 1
+                    },
+                    "StatusCode": 200,
+                    "StatusText": "OK"
+                }
+            }
+        },
+        "UserDoesNotExist": {
+            "0": {
+                "Return": {
+                    "Count":0,
+                    "Items":[]
+                }
+            }
+        },
+        "CreateUserSuccess": {
+            "0": {
+                "Return": {
+                    "we don't care": "because there's a discard"
+                }
+            }
+        },
+        "NotifyBackendsSuccess": {
+            "0": {
+                "Return": {
+                    "we don't care": "because there's a discard"
+                }
+            }
+        }
+    }
+}

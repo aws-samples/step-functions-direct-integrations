@@ -1,0 +1,13 @@
+{
+ "firstname":"John",
+ "lastname":"McDeLuxe",
+ "birthdate":"1984-05-17",
+ "countrybirth":"US",
+ "country":"FR",
+ "postalcode":"75008",
+ "city":"Paris",
+ "street":"50 avenue des Champs Élysées",
+ "email":"john@mcdeluxe.com",
+ "idcard":"0b5cd641-f697-4b6a-bb37-ed8ca8b0a313.jpg",
+ "requestId":"63a96232-fc04-4b9d-a2b3-a3f939a1c9ea"
+}

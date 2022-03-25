@@ -1,0 +1,2 @@
+boto3==1.21.21
+amazon-textract-response-parser
